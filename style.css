@@ -26,3 +26,94 @@ body {margin: 0;}
     ul.topnav li.right,
     ul.topnav li {float: none;}
   }
+
+:root {
+    --accent: #ffcc00;
+    --bg: #1b263b;
+    --slide-bg: #415a77;
+    --height: 260px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:#0d1b2a;
+    color:#fff;
+  }
+
+  /* Full width section that contains the carousel (like your sketch) */
+  .carousel-wrap {
+    width:100%;
+    overflow:hidden;
+    background:var(--bg);
+    height:var(--height);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  /* slides row: will contain clones too */
+  .slides {
+    display:flex;
+    height:100%;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+  }
+
+  /* each slide occupies exactly 100% of the viewport width */
+  .slide {
+    min-width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 20px;
+    text-align:center;
+    background:var(--slide-bg);
+    font-size:1.25rem;
+    font-style: italic;
+  }
+
+  /* arrows */
+  .arrow {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: white;
+    font-size: 28px;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:20;
+  }
+  .arrow:hover { background: rgba(255,255,255,0.22); }
+  .prev { left:18px; }
+  .next { right:18px; }
+
+  /* dots centered at the bottom */
+  .dots {
+    position:absolute;
+    bottom:14px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    z-index:20;
+  }
+  .dot {
+    width:10px;height:10px;border-radius:50%;background:#9aa6b4;cursor:pointer;
+  }
+  .dot.active { background:var(--accent); transform:scale(1.15); }
+
+  /* responsive tweak */
+  @media (max-width:640px){
+    .arrow{ width:36px; height:36px; font-size:22px; }
+    .slide{ font-size:1rem; padding:14px }
+  }
