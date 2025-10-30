@@ -1,136 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Best Robotics ~ Team 58</title>
-</head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<body>
-  <!-- Navegation Bar -->
-  <ul class="topnav">
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#robot">Robot</a></li>
-    <li><a href="#aboutUs">About Us</a></li>
-    <li><a href="#recruitment">Recruitment</a></li>
-    <li><a href="#sponsors">Sponsors</a></li>
-    <li><a href="#minigame">Minigame</a></li>
-  </ul>
+  <head>
+    <link rel="stylesheet" href="style.css/>
+    <title>Best Robotics ~ Team #0058</title>
+  </head>
+  <body>
+        <!-- Navegation Bar -->
+    <ul class="topnav">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#robot">Robot</a></li>
+      <li><a href="#aboutUs">About Us</a></li>
+      <li><a href="#recruitment">Recruitment</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#minigame">Minigame</a></li>
+    </ul>
+  <header> 
+    <div class ="action">
+      <div>
+        <h1>
+          We <b> will make</b> the <b>cut.</b>
+        </h1>
+        <p>
+          Our company is committed to creating efficient 
+          technology that uses minimally invasive robotic surgery 
+          to solve current health issues while maintining saftey 
+          as our first priority.
+        </p>
+      </div>
+    </div>
+  </header>
+    <------ insert robot pictures and cad--->
 
-  <!-- Full width carousel wrapper -->
-<section class="carousel-wrap" aria-label="Quotes carousel">
-  <div class="slides" id="slides">
-    <!-- real slides (the script will clone first/last for smooth looping) -->
-    <div class="slide">“The best way to predict the future is to invent it.” — Alan Kay</div>
-    <div class="slide">“In the middle of difficulty lies opportunity.” — Albert Einstein</div>
-    <div class="slide">“Strive not to be a success, but rather to be of value.” — Albert Einstein</div>
+  <div>
+    <h2>About us</h2>
+    <p>
+      We are BEST team 0058 Eagle RObotics from Allen, Texas. 
+      Our team operates out of the Allen ISD STEAM Center. 
+      We stive to strengthen our community through STEM and be the 
+      leading representative for inclusivity, diversity, and equity 
+      in our area. We serve our community in various ways, including 
+      mentoring rookie teams, hosting community events, and visiting 
+      schools. These experiences give our team members opportunities to be
+      leaders, allow them to develop the necessary skills they need for 
+      success , and inspire others to pursue STEM careers.
+    </p>
+    <iframe
+        src="file:///C:/Users/oob/Downloads/Allen%20Best%20Robotics.pdf"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
   </div>
 
-  <button class="arrow prev" id="prev" aria-label="Previous">&#8249;</button>
-  <button class="arrow next" id="next" aria-label="Next">&#8250;</button>
+  <div>
+    <h2>Best Robtoics</h2>
+    <p>
+      The Best(Boosting Engineering, Science, and Technology) program is a 
+      sports like technology competition that hopes to inspire and motivate
+      students towards studies and careers in engineering, science, and 
+      technology. Collin County (CoCo BEST) is one of several hubs 
+      throughout the state and nation. Our school has participated in BEST 
+      for 28 years, and we could not be prouder to participate in this 
+      program. It encourages many students to pursue STEM careers and 
+      allows them to learn and geow in hands-on enviornment.
+    </p>
+  </div>
+  <div>
+    <h2>2025 Factoids</h2>
+    <p>This game has the theme of Ai, and it inspires many people in our 
+      team who are interested in becoming an engineer. We participated in 
+      the Collin County BEST Game on October 27-28th at Denton High School.
+      We advanced, so we will be participating in the Texas state Best 
+      Competition. We are working hard everyday to improve our designs and 
+      become the BEST option!</p>
+  </div>  
 
-  <div class="dots" id="dots" aria-hidden="false"></div>
-</section>
-
-<script>
- document.addEventListener('DOMContentLoaded', () => {
-  const slidesContainer = document.getElementById('slides');
-  const originalSlides = Array.from(slidesContainer.children);
-  const slideCount = originalSlides.length;
-
-  // clone nodes for smooth looping
-  const firstClone = originalSlides[0].cloneNode(true);
-  const lastClone  = originalSlides[slideCount - 1].cloneNode(true);
-  slidesContainer.appendChild(firstClone);
-  slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
-
-  let allSlides = Array.from(slidesContainer.children); // includes clones
-  let index = 1;
-  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-
-  // create dots
-  const dotsContainer = document.getElementById('dots');
-  for (let i = 0; i < slideCount; i++){
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.dataset.slide = i;
-    dotsContainer.appendChild(d);
-  }
-  const dots = Array.from(dotsContainer.children);
-
-  function updateDots() {
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === ((index - 1 + slideCount) % slideCount)));
-  }
-
-  function moveToIndex(nextIndex, withTransition = true) {
-    if (withTransition) slidesContainer.style.transition = 'transform 0.6s ease-in-out';
-    else slidesContainer.style.transition = 'none';
-    slidesContainer.style.transform = `translateX(-${nextIndex * 100}%)`;
-    index = nextIndex;
-    updateDots();
-  }
-
-  function nextSlide() { moveToIndex(index + 1, true); }
-  function prevSlide() { moveToIndex(index - 1, true); }
-
-  slidesContainer.addEventListener('transitionend', () => {
-    if (index === slideCount + 1) moveToIndex(1, false);
-    if (index === 0) moveToIndex(slideCount, false);
-  });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => { moveToIndex(i + 1, true); restartAutoplay(); });
-    dot.tabIndex = 0;
-    dot.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); dot.click(); }});
-  });
-
-  document.getElementById('next').addEventListener('click', () => { nextSlide(); restartAutoplay(); });
-  document.getElementById('prev').addEventListener('click', () => { prevSlide(); restartAutoplay(); });
-
-  // autoplay with pause on hover & tab visibility
-  let autoplayInterval = 2500; // faster
-  let timer = null;
-
-  function startAutoplay(){
-    stopAutoplay();
-    timer = setInterval(() => nextSlide(), autoplayInterval);
-  }
-
-  function stopAutoplay(){
-    if (timer) { clearInterval(timer); timer = null; }
-  }
-
-  function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
-
-  const wrap = document.querySelector('.carousel-wrap');
-  wrap.addEventListener('mouseenter', stopAutoplay);
-  wrap.addEventListener('mouseleave', startAutoplay);
-
-  // pause when tab inactive
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stopAutoplay();
-    else startAutoplay();
-  });
-
-  startAutoplay();
-
-  window.addEventListener('resize', () => { moveToIndex(index, false); });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') { nextSlide(); restartAutoplay(); }
-    if (e.key === 'ArrowLeft')  { prevSlide(); restartAutoplay(); }
-  });
-});
-</script>
-
- 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
-</html>
+  <div>
+    <h2>Past Competitions</h2>
 
 
+    <p>Our team is immensely proud of our results in the BEST Robotics 
+      competitions. The journey to get to where we are has provided us with
+      many unique experiences and opportunities. We are excited to continue
+      to grow and improve as a team, and we cannot express our gratitude 
+      enough to our sponsors, mentors, and parents for their support. 
+      We would not be where we are today without them. Our team has only 
+      grown stronger and more determined to succeed, and we are excited to 
+      see what the future holds for us!</p>
+  </div>
+  <div>
+    <h1>Follow Us!</h1>
+    <!------add links--->
+  </div>
+  </body>
 
-
+  </html>
 
 
