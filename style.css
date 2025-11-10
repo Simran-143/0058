@@ -1,3 +1,59 @@
+/* CSS file for BEST Robotics Team 0058 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+h1 {
+    position: absolute;
+    top: 375px;
+    left: 40%;
+    transform: translateX(-50%);
+    color: rgb(92, 239, 146);
+    font-size: 100px;
+    padding: 10px 20px;
+}
+h2 {
+    color: #72ffc2;
+    font-size: 50px
+}
+
+h3 {
+    color: #65f5f0;
+}
+
+  @font-face {
+    font-family: 'Zilap Orion';
+    src: url('fonts/ZilapOrionPersonalUseFuturistic-DzA3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+.rounded-image {
+    border-radius: 20px;
+}
+
+.rectangle-text {
+  width: 300px;              /* fixed width to control horizontal size */
+  padding: 20px;             /* inner spacing for a clean look */
+  background-color: #000000; /* optional: background to visualize the shape */
+  line-height: 1.5;          /* controls vertical spacing between lines */
+  word-wrap: break-word;     /* ensures long words don't overflow */
+  text-align: justify;  
+  margin-left: -100px     /* optional: aligns text to both edges */
+}
+
+.background-section{
+  background-image: url('robotbackground.png'); /* your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  font-family: 'Zilap Orion', sans-serif;
+}
+
 body {margin: 0;}
  
   ul.topnav {
@@ -27,93 +83,78 @@ body {margin: 0;}
     ul.topnav li {float: none;}
   }
 
-:root {
-    --accent: #ffcc00;
-    --bg: #1b263b;
-    --slide-bg: #415a77;
-    --height: 260px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background:#0d1b2a;
-    color:#fff;
+  .cyan-line {
+    width: 5px;
+    height: 50px;
+    background-color: cyan;
+    box-shadow: 0 0 10px cyan;
+    margin-top: 250px;
+    margin-left: -275px;
   }
 
-  /* Full width section that contains the carousel (like your sketch) */
-  .carousel-wrap {
-    width:100%;
-    overflow:hidden;
-    background:var(--bg);
-    height:var(--height);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-  }
+  .about-us-section {
+  background-image: url('pleasework.png');
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  padding: 100px 20px;            
+  color: white;                   
+  text-align: center;
+  padding: 50px 20px;
+}
 
-  /* slides row: will contain clones too */
-  .slides {
-    display:flex;
-    height:100%;
-    transition: transform 0.6s ease-in-out;
-    will-change: transform;
-  }
+.recruitment-section {
+  background-image: url('pleasework.png');
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  padding: 100px 40px;            
+  color: white;                   
+  text-align: center;
+  padding: 50px 20px;
+}
 
-  /* each slide occupies exactly 100% of the viewport width */
-  .slide {
-    min-width:100%;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding: 20px;
-    text-align:center;
-    background:var(--slide-bg);
-    font-size:1.25rem;
-    font-style: italic;
-  }
+.hover-box {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
 
-  /* arrows */
-  .arrow {
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background: rgba(255,255,255,0.12);
-    border: none;
-    color: white;
-    font-size: 28px;
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:20;
-  }
-  .arrow:hover { background: rgba(255,255,255,0.22); }
-  .prev { left:18px; }
-  .next { right:18px; }
+.hover-box img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  height: 300px
+}
 
-  /* dots centered at the bottom */
-  .dots {
-    position:absolute;
-    bottom:14px;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    z-index:20;
-  }
-  .dot {
-    width:10px;height:10px;border-radius:50%;background:#9aa6b4;cursor:pointer;
-  }
-  .dot.active { background:var(--accent); transform:scale(1.15); }
+.hover-box:hover img {
+  transform: scale(1.05); /* subtle zoom */
+}
 
-  /* responsive tweak */
-  @media (max-width:640px){
-    .arrow{ width:36px; height:36px; font-size:22px; }
-    .slide{ font-size:1rem; padding:14px }
-  }
+.caption {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  background: rgba(0, 255, 255, 0.7); /* cyan glow */
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.hover-box:hover .caption {
+  opacity: 1;
+}
+
+.footer {
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.285);
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
